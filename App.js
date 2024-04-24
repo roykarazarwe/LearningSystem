@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import VideoLink from './Screens/VideoLinkScreen';
+import VideoScreen from './Screens/VideoScreen';
+import TrialVideo from './Screens/TrialVideo';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const Stack = createStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouetName="Video">
+        <Stack.Screen name="VideoLink" component={VideoLink} />
+        <Stack.Screen name="VideoScreen" component={VideoScreen} />
+        <Stack.Screen name="TrialVideo" component={TrialVideo} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+}
