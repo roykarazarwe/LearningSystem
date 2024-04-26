@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import {Image} from "react-native"
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
@@ -10,7 +11,10 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Magezi</Text>
+      <Image
+        source={require("../assets/logo.png")}
+        style={{ width: 160, height: 160, resizeMode: "contain" }}
+      />
     </View>
   );
 };

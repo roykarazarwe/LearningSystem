@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { Image } from "react-native";
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -24,11 +25,17 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <View style={styles.logoImage}>
+        <Image
+          source={require("../assets/logo.png")}
+          style={{width:200,height:200,resizeMode:'contain'}}
+        />
+      </View>
+
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Username or Email"
+          placeholder="Enter email or student code"
           onChangeText={(text) => setUsername(text)}
           value={username}
           autoCapitalize="none"
@@ -42,12 +49,12 @@ const LoginScreen = ({ navigation }) => {
         />
       </View>
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
+        <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <View style={styles.signupContainer}>
         <Text style={styles.signupText}>Don't have an account?</Text>
         <TouchableOpacity onPress={handleSignUp}>
-          <Text style={[styles.signupText, styles.signupLink]}>Sign Up</Text>
+          <Text style={[styles.signupText, styles.signupLink]}> Create account</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -61,6 +68,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#f5f5f5",
     paddingHorizontal: 20,
+  },
+  logoImage: {
+    width: 100,
+    height: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:'center'
   },
   title: {
     fontSize: 24,

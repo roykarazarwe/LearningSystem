@@ -6,31 +6,45 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { Image } from "react-native";
 
 const SignUpScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignUp = () => {
     // Implement your sign-up logic here
-    console.log("Signing up with:", { username, email, password });
+    console.log("Signing up with:", { username, email,number, password });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <View style={styles.logoImage}>
+        <Image
+          source={require("../assets/logo.png")}
+          style={{ width: 140, height: 140, resizeMode: "contain"}}
+        />
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Username"
+          placeholder="First Name ..."
           onChangeText={(text) => setUsername(text)}
           value={username}
           autoCapitalize="none"
         />
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder="Last Name ..."
+          onChangeText={(text) => setUsername(text)}
+          value={username}
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="you@example.com"
           onChangeText={(text) => setEmail(text)}
           value={email}
           keyboardType="email-address"
@@ -38,7 +52,23 @@ const SignUpScreen = ({ navigation }) => {
         />
         <TextInput
           style={styles.input}
+          placeholder="e.g 256 702950975"
+          onChangeText={(text) => setPhone(text)}
+          value={phone}
+          keyboardType="numeric"
+          autoCapitalize="none"
+        />
+        
+        <TextInput
+          style={styles.input}
           placeholder="Password"
+          onChangeText={(text) => setPassword(text)}
+          value={password}
+          secureTextEntry
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Retype Password"
           onChangeText={(text) => setPassword(text)}
           value={password}
           secureTextEntry
@@ -64,6 +94,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#f5f5f5",
     paddingHorizontal: 20,
+    overflow:'scroll'
   },
   title: {
     fontSize: 24,
@@ -73,6 +104,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: "100%",
     marginBottom: 20,
+    marginTop:-20
   },
   input: {
     height: 50,
@@ -82,6 +114,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 10,
     backgroundColor: "#fff",
+  },
+  logoImage: {
+    marginTop:-20
   },
   button: {
     backgroundColor: "#007bff",

@@ -16,7 +16,7 @@ import DashboardScreen from './Screens/DashboardScreen';
 
 export default function App() {
   const Stack = createStackNavigator();
-
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
@@ -25,9 +25,21 @@ export default function App() {
           component={SplashScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
-        <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DashboardScreen"
+          component={DashboardScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUpScreen"
+          component={SignUpScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
       {/* <Stack.Navigator initialRouteName="Video">
         <Stack.Screen name="VideoLink" component={VideoLink} />
