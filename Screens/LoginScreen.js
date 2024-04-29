@@ -104,8 +104,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 15,
+    fontFamily:"Nunito"
+    // fontWeight: "bold",
   },
   signupContainer: {
     flexDirection: "row",

@@ -8,6 +8,9 @@ import ProfileScreen from "./Screens/ProfileScreen";
 import LoginScreen from "./Screens/LoginScreen";
 import SignUpScreen from "./Screens/SignUpScreen";
 import DashboardScreen from './Screens/DashboardScreen';
+import SubscribeScreen from "./Screens/SubscribeScreen";
+import PaymentScreen from "./Screens/PaymentScreen";
+import pesapal from './Screens/pesapal';
 
 
 // import VideoLink from './Screens/VideoLinkScreen';
@@ -36,9 +39,27 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="Subscribe"
+          component={SubscribeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={PaymentScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="pesapal"
+          component={pesapal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="SignUpScreen"
           component={SignUpScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerShown: false,
+            headerTitleAlign: "center",
+          }}
         />
       </Stack.Navigator>
       {/* <Stack.Navigator initialRouteName="Video">
