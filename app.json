@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "LearningSystem",
+    "displayName":"LearningSystem",
     "slug": "LearningSystem",
     "version": "1.0.0",
     "orientation": "default",
@@ -24,8 +25,14 @@
       },
       "package": "com.anonymous.LearningSystem"
     },
+    "fonts": {
+      "customFont": {
+        "asset": "./assets/fonts/Nunito-Regular.ttf"
+      }
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
+    
   }
 }
