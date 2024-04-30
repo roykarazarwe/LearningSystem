@@ -19,6 +19,10 @@ import Exams from "./Exams";
 import SubscribeScreen from "./SubscribeScreen";
 import SmallCardGrid from './components/SmallCardGrid'
 
+import VidTopicScreen from "./VidTopicScreen";
+import VidSubtopicScreen from "./VidSubtopicScreen";
+import VideoScreen from "./VideoScreen";
+
 // Custom header component for the top navigation bar
 const CustomHeader = ({ navigation }) => {
   const openDrawer = () => {
@@ -94,6 +98,21 @@ const VideoTutorialsStackScreen = () => {
       <VideoTutorialsStack.Screen
         name="VideoTutorials"
         component={VideoTutorials}
+        options={{ headerShown: false }}
+      />
+      <VideoTutorialsStack.Screen
+        name="Topics"
+        component={VidTopicScreen}
+        options={{ headerShown: false }}
+      />
+      <VideoTutorialsStack.Screen
+        name="Sub Topics"
+        component={VidSubtopicScreen}
+        options={{ headerShown: false }}
+      />
+      <VideoTutorialsStack.Screen
+        name="Video"
+        component={VideoScreen}
         options={{ headerShown: false }}
       />
     </VideoTutorialsStack.Navigator>
