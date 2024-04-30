@@ -108,10 +108,11 @@ const styles = StyleSheet.create({
     // backgroundColor:'red'
   },
   container: {
-    flex: 1,
+    display:'flex',
     alignItems: "center",
-    justifyContent: "center",
-      paddingHorizontal: 20,
+    justifyContent: "start",
+    flexDirection:'column',
+    paddingHorizontal: 20,
     paddingTop:10
   },
   card: {
