@@ -1,26 +1,24 @@
-// import React from 'react';
-// import { StyleSheet, SafeAreaView } from 'react-native';
-// //import YoutubeIframe from 'react-native-youtube-iframe'; 
-// import YoutubePlayer from 'react-native-youtube-iframe';  // install gesureHandler v2.14.0,  webview v11
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+//import YoutubeIframe from 'react-native-youtube-iframe'; 
+import YoutubePlayer from 'react-native-youtube-iframe';  // install gesureHandler v2.14.0,  webview v11
 
-// function VideoScreen(props) {
-//   return (
-//     <SafeAreaView>
-//         <YoutubePlayer
-//             height={300}
-//             play={true}
-//             videoId={'GvLIEiqxS6s'}
-//         />
-//     </SafeAreaView>
-//   );
-// }
+function VideoScreen(props) {
+    const [video, setVideo] = useState(null);
+    useEffect(async () => {
+        setVideo(await AsyncStorage.getItem('video'));
+    }, []);
 
-// // const styles = StyleSheet.create({
-// // container: {
-// //   flex: 1,
-// //   alignItems: 'center',
-// //   justifyContent: 'center',
-// // },
-// // });
+    return (
+        <SafeAreaView>
+            <YoutubePlayer
+                height={300}
+                play={true}
+                videoId={video}
+            />
+        </SafeAreaView>
+    );
+}
 
-// export default VideoScreen;
+export default VideoScreen;
