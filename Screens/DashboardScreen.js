@@ -43,7 +43,7 @@ const CustomHeader = ({ navigation }) => {
 const DashboardScreen = ({ navigation }) => {
   return (
     <View
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      style={{ display:'flex',flexDirection:'column', alignItems: "center", justifyContent: "start",paddingTop:10 }}
     >
       <SmallCardGrid/>
     </View>
@@ -150,7 +150,7 @@ const DrawerContent = ({ navigation }) => {
         }}
       >
         <View style={styles.profileBox}>
-          <View>
+          <View style={{borderWidth:2,borderRadius:'50%',borderColor:'dodgerblue'}}>
             <MaterialCommunityIcons
               name="account-circle"
               size={100}
@@ -161,83 +161,104 @@ const DrawerContent = ({ navigation }) => {
           <Text>Lower Secondary</Text>
         </View>
         <DrawerItem
-          label="Dashboard"
+          label={({ focused, color }) => (
+            <View style={styles.icon}>
+              <MaterialCommunityIcons name="home" size={20} color={color} />
+              <Text style={styles.label}>{"Dashboard"}</Text>
+            </View>
+          )}
           onPress={() => navigation.navigate("Dashboard")}
         />
         <View style={styles.sideNavList}>
           <Text style={styles.sideNavTitle}>Learning</Text>
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Reading Material"
-            onPress={() => navigation.navigate("ReadingMaterial")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons
-                name="book-open"
-                size={size}
-                color={color}
-              />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons
+                  name="book-open"
+                  size={20}
+                  color={color}
+                />
+                <Text style={styles.label}>{"ReadingMaterial"}</Text>
+              </View>
             )}
+            onPress={() => navigation.navigate("ReadingMaterial")}
           />
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Video Tutorials"
+            // style={styles.sideNavItem}
+            // label="Video Tutorials"
             onPress={() => navigation.navigate("VideoTutorials")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons name="video" size={size} color={color} />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons name="video" size={20} color={color} />
+                <Text style={styles.label}>{"Video Tutorials"}</Text>
+              </View>
             )}
             activeBackgroundColor="red"
           />
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Classes"
-            labelStyle={{ width: 100 }}
+            // style={styles.sideNavItem}
+            // label="Classes"
+            // labelStyle={{ width: 100 }}
             onPress={() => navigation.navigate("Classes")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons name="school" size={size} color={color} />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons name="school" size={20} color={color} />
+                <Text style={styles.label}>{"Classes"}</Text>
+              </View>
             )}
           />
         </View>
         <View style={styles.sideNavList}>
           <Text style={styles.sideNavTitle}>Assessments</Text>
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Quizzes"
-            labelStyle={{ width: 100 }}
+            // style={styles.sideNavItem}
+            // label="Quizzes"
+            // labelStyle={{ width: 100 }}
             onPress={() => navigation.navigate("Quizzes")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons
-                name="clipboard-check"
-                size={size}
-                color={color}
-              />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons
+                  name="clipboard-check"
+                  size={20}
+                  color={color}
+                />
+                <Text style={styles.label}>{"Quizzes"}</Text>
+              </View>
             )}
           />
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Exams"
-            labelStyle={{ width: 100 }}
+            // style={styles.sideNavItem}
+            // label="Exams"
+            // labelStyle={{ width: 100 }}
             onPress={() => navigation.navigate("Exams")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons
-                name="file-document"
-                size={size}
-                color={color}
-              />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons
+                  name="file-document"
+                  size={20}
+                  color={color}
+                />
+                <Text style={styles.label}>{"Exams"}</Text>
+              </View>
             )}
           />
         </View>
         <View>
           <DrawerItem
-            style={styles.sideNavItem}
-            label="Subscribe"
-            labelStyle={{ width: 100 }}
+            // style={styles.sideNavItem}
+            // label="Subscribe"
+            // labelStyle={{ width: 100 }}
             onPress={() => navigation.navigate("SubscribeScreen")}
-            icon={({ color, size }) => (
-              <MaterialCommunityIcons
-                name="credit-card"
-                size={size}
-                color={color}
-              />
+            label={({ focused, color }) => (
+              <View style={styles.icon}>
+                <MaterialCommunityIcons
+                  name="credit-card"
+                  size={20}
+                  color={color}
+                />
+                <Text style={styles.label}>{"subscribe"}</Text>
+              </View>
             )}
           />
         </View>
@@ -301,9 +322,9 @@ const styles = StyleSheet.create({
   profileBox: {
     // borderBottomWidth: "2px",
     // borderBottomColor: "dodgerblue",
-    width: '100%',
+    width: "100%",
     display: "flex",
-    justifyContent: 'center',
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
     // backgroundColor: "d",
@@ -312,18 +333,30 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     width: 200,
   },
+  icon: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  label: {
+    marginLeft: 5,
+    fontSize: 16,
+    color: "black",
+    width: 140,
+    fontFamily: 'Nunito'
+    // activeBackgroundColor:'red'
+  },
   UserName: {
     fontWeight: "bolder",
   },
-  sideNavItem:{
-    width:200,
-    display:'flex',
-    justifyContent:'center',
-    alignItems: 'center',
+  sideNavItem: {
+    width: 200,
+    height:40,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     // backgroundColor: 'dodgerblue',
-    color:'white'
-    // borderWidth:1
-
+    color: "white",
+    borderWidth:1
   },
   sideNavList: {
     width: "100%",
