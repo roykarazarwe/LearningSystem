@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const pesapal = ({ navigation, route }) => {
+const Pesapal = ({ navigation, route }) => {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default pesapal;
+export default Pesapal;
