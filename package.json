@@ -12,25 +12,41 @@
     "@bildau/rn-pdf-reader": "^4.2.7",
     "@expo/metro-runtime": "~3.1.3",
     "@expo/vector-icons": "^14.0.0",
+<<<<<<< HEAD
     "@react-native-async-storage/async-storage": "^1.23.1",
+=======
+    "@react-native-async-storage/async-storage": "^1.21.0",
+>>>>>>> 4e16f4c919cd80b30485543f542eb059d4ebdbae
     "@react-native-community/hooks": "^3.0.0",
     "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
     "expo": "^50.0.0",
     "expo-av": "^13.10.6",
+<<<<<<< HEAD
     "expo-constants": "^15.4.6",
     "expo-file-system": "^16.0.9",
+=======
+    "expo-cli": "^6.3.10",
+>>>>>>> 4e16f4c919cd80b30485543f542eb059d4ebdbae
     "expo-screen-orientation": "^6.4.1",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",
     "react-native-gesture-handler": "^2.14.0",
+<<<<<<< HEAD
     "react-native-pdf": "^6.7.5",
     "react-native-reanimated": "~3.6.2",
     "react-native-web": "~0.19.6",
     "react-native-webview": "^11.26.1",
+=======
+    "react-native-reanimated": "~3.6.2",
+    "react-native-table-component": "^1.2.2",
+    "react-native-web": "~0.19.6",
+    "react-native-web-webview": "^1.0.2",
+    "react-native-webview": "^13.6.4",
+>>>>>>> 4e16f4c919cd80b30485543f542eb059d4ebdbae
     "react-native-youtube": "^2.0.2",
     "react-native-youtube-iframe": "^2.3.0"
   },
