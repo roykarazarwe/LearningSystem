@@ -29,10 +29,10 @@
     "react-native-gesture-handler": "^2.14.0",
     "react-native-pdf": "^6.7.5",
     "react-native-reanimated": "~3.6.2",
-    "react-native-web": "~0.19.6",
-    "react-native-webview": "^11.26.1",
     "react-native-table-component": "^1.2.2",
+    "react-native-web": "~0.19.6",
     "react-native-web-webview": "^1.0.2",
+    "react-native-webview": "^11.26.1",
     "react-native-youtube": "^2.0.2",
     "react-native-youtube-iframe": "^2.3.0"
   },
