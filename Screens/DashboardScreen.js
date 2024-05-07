@@ -23,6 +23,10 @@ import VidTopicScreen from "./VidTopicScreen";
 import VidSubtopicScreen from "./VidSubtopicScreen";
 import VideoScreen from "./VideoScreen";
 
+import ReadTopicScreen from "./ReadTopicScreen";
+import ReadSubtopicScreen from "./ReadSubtopicScreen";
+import ReadingScreen from "./ReadingScreen";
+
 // Custom header component for the top navigation bar
 const CustomHeader = ({ navigation }) => {
   const openDrawer = () => {
@@ -72,9 +76,24 @@ const ReadingMaterialStackScreen = () => {
   return (
     <ReadingMaterialStack.Navigator>
       <ReadingMaterialStack.Screen
-        name="ReadingMaterial"
+        name="Subjects"
         component={ReadingMaterial}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
+      />
+      <ReadingMaterialStack.Screen
+        name="Topics"
+        component={ReadTopicScreen}
+        options={{ headerShown: true }}
+      />
+      <ReadingMaterialStack.Screen
+        name="Sub Topics"
+        component={ReadSubtopicScreen}
+        options={{ headerShown: true }}
+      />
+      <ReadingMaterialStack.Screen
+        name="Book"
+        component={ReadingScreen}
+        options={{ headerShown: true }}
       />
     </ReadingMaterialStack.Navigator>
   );
@@ -96,24 +115,24 @@ const VideoTutorialsStackScreen = () => {
   return (
     <VideoTutorialsStack.Navigator>
       <VideoTutorialsStack.Screen
-        name="VideoTutorials"
+        name="Subjects"
         component={VideoTutorials}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <VideoTutorialsStack.Screen
         name="Topics"
         component={VidTopicScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <VideoTutorialsStack.Screen
         name="Sub Topics"
         component={VidSubtopicScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
       <VideoTutorialsStack.Screen
         name="Video"
         component={VideoScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
     </VideoTutorialsStack.Navigator>
   );

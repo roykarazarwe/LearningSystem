@@ -35,20 +35,35 @@ const SmallCardGrid = () => {
 };
 
 const styles = StyleSheet.create({
+  // container: {
+  //   width: "70%",
+  //   height: "100%",
+  //   // backgroundColor: "white",
+  //   borderRadius: 10,
+  //   color: "white",
+  //   padding: 10,
+  //   flex: 1,
+  //   flexDirection: "row",
+  //   flexWrap: "wrap",
+  //   alignItems: "center", // Align cards vertically
+  //   justifyContent: "space-between", // Distribute space between cards
+  //   padding: 10,
+  // },
   container: {
-    width: "70%",
+    width: "100%",
     height: "100%",
-    // backgroundColor: "white",
+    //backgroundColor: "white",
     borderRadius: 10,
     color: "white",
-    padding: 10,
+    //padding: 10,
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "center", // Align cards vertically
-    justifyContent: "space-between", // Distribute space between cards
-    padding: 10,
+    justifyContent: "space-evenly", // Distribute space between cards
+    padding: 20,
   },
+
   card: {
     shadowColor: "#000",
     shadowOffset: {
@@ -68,6 +83,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // color: "red",
     fontWeight: "light",
+    marginBottom: 20,
   },
   cardText: {
     fontSize: 16,

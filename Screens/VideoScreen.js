@@ -18,7 +18,7 @@ function VideoScreen(props) {
     return (
         <SafeAreaView>
             <YoutubePlayer
-                height={300}
+                height={400}
                 // play={true}
                 videoId={video}
             />

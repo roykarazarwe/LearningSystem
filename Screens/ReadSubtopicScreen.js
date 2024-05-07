@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, SafeAreaView, TouchableHighlight, View, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const VideoTutorials = () => {
-  const navigation = useNavigation();
+function ReadSubtopicScreen(props) {
+    const navigation = useNavigation();
 
-  const gotToTopics = async (subject) => {
-		await AsyncStorage.setItem('subject', subject);
-        navigation.navigate("Topics");
+    const [topic, setTopic] = useState(null);
+    const getTopic = async () => {
+        setTopic(await AsyncStorage.getItem('topic'));
+    }
+    
+    useEffect(() => {
+        getTopic();
+    }, []);
+
+
+  const gotToBook = async (book) => {
+		await AsyncStorage.setItem('book', book);
+        navigation.navigate("Book");
 	  };
 
     return (
         <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <View style={styles.container}>
-                <TouchableHighlight style={styles.card} onPress={() => gotToTopics('Math')} >
-                    <Text style={{color: "white"}} >Math</Text>
-                </TouchableHighlight>
-                <TouchableHighlight style={styles.card} onPress={() => gotToTopics('English')} >
-                    <Text style={{color: "white"}} >English</Text>
-                </TouchableHighlight>
+                { topic === 'Fractions' &&
+                (<TouchableHighlight style={styles.card} onPress={() => gotToBook('https://www.mathantics.com/files/pdfs/Worksheets_SimplifyingFractions.pdf')} >
+                    <Text style={{color: "white"}} >Basic Fraction Operations</Text>
+                </TouchableHighlight>)
+                }
+                { topic === 'Letter Writing' &&
+                (<TouchableHighlight style={styles.card} onPress={() => gotToBook('https://elttguide.com/wp-content/uploads/2020/09/Write-a-Formal-Letter.pdf')} >
+                    <Text style={{color: "white"}} >Formal and Informal Letters</Text>
+                </TouchableHighlight>)
+                }
             </View>
         </SafeAreaView>
     );
@@ -62,4 +76,5 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         },
 })
-export default VideoTutorials;
+
+export default ReadSubtopicScreen;
