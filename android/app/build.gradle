@@ -150,6 +150,7 @@ dependencies {
     implementation project(':react-native-youtube')
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation "com.reactnativecommunity.webview:react-native-webview:11.26.1" 
 
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
     def isWebpEnabled = (findProperty('expo.webp.enabled') ?: "") == "true";
