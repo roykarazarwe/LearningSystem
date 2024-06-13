@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "LearningSystem",
-    "displayName":"LearningSystem",
+    "displayName": "LearningSystem",
     "slug": "LearningSystem",
     "version": "1.0.0",
     "orientation": "default",
@@ -32,7 +32,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1404195e-8e6d-4c3a-b713-372cdecf5e23"
+      }
     }
-    
   }
 }

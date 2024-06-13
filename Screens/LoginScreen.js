@@ -22,7 +22,8 @@ const LoginScreen = ({ navigation }) => {
         setError("Password can not be empty");
       } else {
         await fetch(
-          "https://cors-anywhere.herokuapp.com/https://magezi.ac.ug/mobile_app_end_points/login.php",
+          "https://proxy-silk-zeta.vercel.app/api/login.php",
+          // "https://cors-anywhere.herokuapp.com/https://magezi.ac.ug/mobile_app_end_points/login.php",
           {
             method: "POST",
             headers: {
